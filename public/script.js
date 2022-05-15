@@ -169,10 +169,6 @@ start_btn.addEventListener('click', start);
 stop_btn.addEventListener('click', stop);
 reset_btn.addEventListener('click', reset);
 
-// watch.addEventListener('click', start);
-// watch.addEventListener('click', stop);
-// reset_btn.addEventListener('click', reset);
-
 
 //timer function
 //need timer that every second ticks up and displays the correct time 
@@ -213,10 +209,6 @@ if (hrs < 10) hrs = '0' + hrs;
 
 function start () {
 // if its already running we dont need to start again
-
-// if (interval) {
-// return
-// }
 
   // if its not running it can start
   // every 1000 ms it will call timer function

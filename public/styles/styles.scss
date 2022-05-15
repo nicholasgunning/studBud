@@ -1,3 +1,6 @@
+@import './pdfViewer';
+@import './timer';
+
 html, body {
     height: 100%;
     width: 100%;
@@ -17,66 +20,22 @@ html, body {
   }
   
   .pdfViewer { 
-      grid-area: 1 / 1 / 5 / 3; 
-      background-color: #f18973;
-  
-             }
-  
-  #pdf-canvas {
-    border-radius: 30px;
-    display: grid;
-    width: 80%;
-    height: 80%;
-    margin-left: 5vw;
-  
-  }
-  
-  #upload-button { 
-    background-color: #2b2e3c;
-    border-color: white;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1vw;
-    border-radius: 20px;
-  
-  }
-  
-  #file-to-upload {
-  display: none;
-  }
-  
-  
-  .arrowLeft {
-  background-color: #2b2e3c;
-  color: white;
-  transform: rotate(180deg);
-  font-size:1vw;
-  border-radius: 20px;
-  border-color: white;
-  
-    
-  }
-  
-  .arrowRight {
-  background-color: #2b2e3c;
-  color: white;
-  font-size:1vw;
-  text-decoration: none;
-  border-radius: 20px;
-  border-color: white;
-    
-  }
-  
-  
+    grid-area: 1 / 1 / 5 / 3; 
+    background-color: #f18973;
+
+           }
   
   .player { grid-area: 5 / 1 / 6 / 3; 
            background-color: #411e76;
           
           
           }
+
+#spotifyPlayer {
+    width: 43vw;
+    height: 80;
+}
+
   .notes { grid-area: 1 / 3 / 3 / 5; 
           background-color: #0fc212;
          
@@ -98,43 +57,11 @@ html, body {
     padding: 20px;
     border-radius: 25px;
   }
-  
-  
-  
+
   .timer { grid-area: 3 / 3 / 4 / 4; 
-          background-color: #69171f;
-         }
-  
-  .watch {
-      text-align: center;
-      background-color:  #3630B2;
-      width: 60%;
-      max-width: 100vw;
-      padding: 1vw;
-    font-size: 3vw;
-      border-radius: 1rem;
-  }
-  
-  .controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  }
-  
-  .controls button {
-    background-color: #2b2e3c;
-    border-color: white;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1vw;
-    display: inline-block;
-    border-radius: 20px;
-  
-  }
-  
+    background-color: #69171f;
+   }
+
   
   .pomodoro { grid-area: 3 / 4 / 4 / 5; 
              background-color: #6ab9f6;
@@ -160,13 +87,35 @@ html, body {
   }
   .buttons { grid-area: 5 / 3 / 6 / 5; 
             background-color: #d9ca20;
-           
+            display: block;
+            
+            
            }
 
-    #viewAllTasks {
+#viewAllTasksButton {
+    all: unset;
+    width: 50%;
+    padding: 15px;
+    font-size: 1.8vw;
+    background-color: #2B2E3C;
+    color: white;
+    border-radius: 25px;
+    border: 1px solid white;
 
-        background-color: #0bae93;
-
-        }
 
 
+}
+
+#dictionaryButton {
+    all: unset;
+    margin-top: 20px;
+    width: 50%;
+    padding: 15px;
+    font-size: 1.8vw;
+    background-color: #2B2E3C;
+    color: white;
+    border-radius: 25px;
+    border: 1px solid white;
+
+
+}
