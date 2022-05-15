@@ -1,10 +1,172 @@
-body {
-    background: blue;
-    color: yellow;
-    font-family: 'Comic Sans MS', sans-serif;
-}
-
-h1 {
+html, body {
+    height: 100%;
+    width: 100%;
+  
+  /*   COULD BE BUG */
+    margin: 0; 
+    padding: 0;
+  }
+  
+  
+  .parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .pdfViewer { 
+      grid-area: 1 / 1 / 5 / 3; 
+      background-color: #f18973;
+  
+             }
+  
+  #pdf-canvas {
+    border-radius: 30px;
+    display: grid;
+    width: 80%;
+    height: 80%;
+    margin-left: 5vw;
+  
+  }
+  
+  #upload-button { 
+    background-color: #2b2e3c;
+    border-color: white;
     color: white;
-}
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    border-radius: 20px;
+  
+  }
+  
+  #file-to-upload {
+  display: none;
+  }
+  
+  
+  .arrowLeft {
+  background-color: #2b2e3c;
+  color: white;
+  transform: rotate(180deg);
+  font-size:1vw;
+  border-radius: 20px;
+  border-color: white;
+  
+    
+  }
+  
+  .arrowRight {
+  background-color: #2b2e3c;
+  color: white;
+  font-size:1vw;
+  text-decoration: none;
+  border-radius: 20px;
+  border-color: white;
+    
+  }
+  
+  
+  
+  .player { grid-area: 5 / 1 / 6 / 3; 
+           background-color: #411e76;
+          
+          
+          }
+  .notes { grid-area: 1 / 3 / 3 / 5; 
+          background-color: #0fc212;
+         
+         
+         
+         }
+  
+  #noteBox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 60%;
+    height: 200px;
+    outline: white;
+   border: 1px solid white;
+   resize: none;
+    background: #3630B2;
+    color: white;
+    padding: 20px;
+    border-radius: 25px;
+  }
+  
+  
+  
+  .timer { grid-area: 3 / 3 / 4 / 4; 
+          background-color: #69171f;
+         }
+  
+  .watch {
+      text-align: center;
+      background-color:  #3630B2;
+      width: 60%;
+      max-width: 100vw;
+      padding: 1vw;
+    font-size: 3vw;
+      border-radius: 1rem;
+  }
+  
+  .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  }
+  
+  .controls button {
+    background-color: #2b2e3c;
+    border-color: white;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1vw;
+    display: inline-block;
+    border-radius: 20px;
+  
+  }
+  
+  
+  .pomodoro { grid-area: 3 / 4 / 4 / 5; 
+             background-color: #6ab9f6;
+            
+            }
+  .tasks { grid-area: 4 / 3 / 5 / 5; 
+          background-color: #1d4e2c;
+         }
+  
+  #taskBox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 60%;
+    height: 200px;
+    outline: white;
+   border: 1px solid white;
+   resize: none;
+    background: #3630B2;
+    color: white;
+    padding: 20px;
+    border-radius: 25px;
+  }
+  .buttons { grid-area: 5 / 3 / 6 / 5; 
+            background-color: #d9ca20;
+           
+           }
+
+    #viewAllTasks {
+
+        background-color: #0bae93;
+
+        }
+
 
