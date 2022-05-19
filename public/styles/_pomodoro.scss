@@ -1,0 +1,67 @@
+.pomodoro {
+    box-sizing: border-box;
+    background-image: var(--pomodoro);
+    transition: background-color 1s ease;
+    user-select: none;
+    width: 80%;
+    padding: 1vw;
+    border-radius: 25px;
+  }
+  
+  
+  :root {
+  --pomodoro: linear-gradient(150deg, #3630B2, #530A45);
+  --shortBreak: linear-gradient(150deg, #FF95B2, #FFBC63);
+  --longBreak: linear-gradient(150deg, #FF5F9B, #DB74FF);
+  }
+  
+  .clock {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 3vw;
+    line-height: 1;
+    text-align: center;
+  }
+  
+  .mode-button {
+    font-size: 1vw; 
+    margin: auto;
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: 300;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 2px 12px;
+    background: none;
+  }
+  
+  .button-group {
+    margin: auto;
+    text-align: center;
+  }
+  
+  .mode-button.active {
+    border-color: #fff;
+  }
+  
+  
+  .main-button {
+    cursor: pointer;
+    font-size: 1vw;
+    margin: auto;
+    display: flex;
+    padding: 0.5vw;
+    border-style: none;
+    background-color: #2B2E3C;
+    color: white;
+    border-radius: 25px;
+    border: 1px solid white;
+  }
+  
+  button:focus, button:active {
+    outline: none;
+  }
+  
+  
+  

@@ -1,5 +1,6 @@
 @import './pdfViewer';
 @import './timer';
+@import './pomodoro';
 
 html, body {
     height: 100%;
@@ -8,6 +9,7 @@ html, body {
   /*   COULD BE BUG */
     margin: 0; 
     padding: 0;
+     box-sizing: border-box;
   }
   
   
@@ -58,12 +60,12 @@ html, body {
     border-radius: 25px;
   }
 
-  .timer { grid-area: 3 / 3 / 4 / 4; 
+  .stopwatch { grid-area: 3 / 3 / 4 / 4; 
     background-color: #69171f;
    }
 
   
-  .pomodoro { grid-area: 3 / 4 / 4 / 5; 
+  .pomodoroDiv { grid-area: 3 / 4 / 4 / 5; 
              background-color: #6ab9f6;
             
             }

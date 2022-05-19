@@ -13,13 +13,11 @@
         <div class="pdfViewer">
           <div class="container">
             <!--   This part is the title "PDF PREVIEW" and upload button-->
-
             <div class="row my-3 d-flex justify-content-center">
               <div class="col-lg-10">
                 <h3 class="text-center">PDF Preview</h3>
               </div>
             </div>
-
             <div class="row my-3 d-flex justify-content-center">
               <!--     This is the Select PDF Button and that section that its in -->
               <div class="col-lg-10 text-center">
@@ -32,33 +30,27 @@
                 />
               </div>
             </div>
-
             <!--   End of Title and Select PDF-->
           </div>
-
           <div class="row my-3 d-flex justify-content-center">
             <div class="col-lg-10 text-center">
               <div id="pdf-main-container">
                 <!-- 				<div id="pdf-loader">
-                <p>Please submit reading</p>
-              </div> -->
-
+                           <p>Please submit reading</p>
+                           </div> -->
                 <div id="pdf-contents">
                   <!--           Dont really need but will keep commented
-   					<div id="pdf-meta"> -->
+                              <div id="pdf-meta"> -->
                   <!--             
-                      <div id="page-count-container">Page <span id="pdf-current-page"></span> of <span id="pdf-total-pages"></span></div>
-                  </div> -->
-
+                              <div id="page-count-container">Page <span id="pdf-current-page"></span> of <span id="pdf-total-pages"></span></div>
+                              </div> -->
                   <div id="aWrapper">
                     <canvas id="pdf-canvas" width="500vw"></canvas>
                   </div>
-
                   <!-- 						<div id="page-loader">Loading page ...</div>
-              </div> -->
+                              </div> -->
                 </div>
               </div>
-
               <div id="pdf-buttons">
                 <!--                   Small section for the Next and Previous buttons -->
                 <button id="upload-button">Upload new</button>
@@ -72,7 +64,6 @@
             </div>
           </div>
         </div>
-
         <div class="player">
           <h3>player</h3>
           <iframe
@@ -90,7 +81,7 @@
             <textarea id="noteBox"></textarea>
           </div>
         </div>
-        <div class="timer">
+        <div class="stopwatch">
           <h3>timer</h3>
           <div id="watchArea" class="watch">
             <div class="time">00:00:00</div>
@@ -101,9 +92,46 @@
             </div>
           </div>
         </div>
-
-        <div class="pomodoro">
+        <div class="pomodoroDiv">
           <h3>pomodoro</h3>
+          <div class="pomodoro" id="pomodoro1">
+            <div class="timer">
+              <div class="button-group mode-buttons" id="js-mode-buttons">
+                <button
+                  data-mode="pomodoro"
+                  class="button active mode-button"
+                  id="js-pomodoro"
+                >
+                  Pomodoro
+                </button>
+                <button
+                  data-mode="shortBreak"
+                  class="button mode-button"
+                  id="js-short-break"
+                >
+                  Short break
+                </button>
+                <button
+                  data-mode="longBreak"
+                  class="button mode-button"
+                  id="js-long-break"
+                >
+                  Long break
+                </button>
+              </div>
+              <div class="clock" id="js-clock">
+                <span id="js-minutes">25</span>
+                <span class="separator">:</span>
+                <span id="js-seconds">00</span>
+              </div>
+
+              <div id="js-clock">
+                <button class="main-button" data-action="start" id="js-btn">
+                  Begin Session
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="tasks">
           <h3>tasks</h3>
@@ -115,7 +143,6 @@
           <button id="dictionaryButton">Dictionary</button>
         </div>
       </div>
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.0.385/build/pdf.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.0.385/build/pdf.worker.js"></script>
