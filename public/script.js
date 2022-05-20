@@ -369,3 +369,21 @@ $(document).ready(function () {
    });
    $(".main-button").click(function () {});
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	var allNotes = document.getElementsByClassName("allNotes");
+	
+	var i;
+	for (i = 0; i < allNotes.length; i++) {
+  var notes = localStorage.getItem("notesApp" + allNotes[i].id); // FETCHING VALUE FROM LOCAL STORAGE
+		
+  if(notes != null) {
+    document.getElementById(allNotes[i].id).value = notes;
+  	}
+	
+allNotes[i].onkeyup = function(event) {
+  var storedData = event.target.value;  localStorage.setItem("notesApp" + event.target.id, storedData); //  STORING VALUE TO LOCAL STORAGE
+ 	 }
+	}
+});
