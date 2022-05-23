@@ -1,142 +1,52 @@
-var __PDF_DOC;
-var __CURRENT_PAGE;
-var __TOTAL_PAGES;
-var __PAGE_RENDERING_IN_PROGRESS = 0;
-var __CANVAS = $('#pdf-canvas').get(0);
-var __CANVAS_CTX = __CANVAS.getContext('2d');
+// DICTIONARY
+const dictionaryInput = document.querySelector('.dictionarySearchInput')
+const dictionaryBtn = document.querySelector('#dictionarySearchButton')
+const dictionaryCard = document.querySelector('.dictionaryCard')
 
-
-// RESIZING CANVAS
-
-var aWrapper = document.getElementById("aWrapper");
-var canvas = document.getElementById("pdf-canvas");
-
-
-function resizeCanvas() {
-   //Gets the devicePixelRatio
-   var pixelRatio = setCanvasScalingFactor();
-
-   //The viewport is in portrait mode, so var width should be based off viewport WIDTH
-   if (window.innerHeight > window.innerWidth) {
-      //Makes the canvas 100% of the viewport width
-      var width = Math.round(1.0 * window.innerWidth);
-   }
-   //The viewport is in landscape mode, so var width should be based off viewport HEIGHT
-   else {
-      //Makes the canvas 100% of the viewport height
-      var width = Math.round(1.0 * window.innerHeight);
-   }
-
-   //This is done in order to maintain the 1:1 aspect ratio, adjust as needed
-   var height = width;
-
-   //This will be used to downscale the canvas element when devicePixelRatio > 1
-   aWrapper.style.width = width + "px";
-   aWrapper.style.height = height + "px";
-
-   canvas.width = width * pixelRatio;
-   canvas.height = height * pixelRatio;
+dictionary_api('love')
+async function dictionary_api (word) {
+    const resp = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+        .then(resp => resp.json())
+    
+    return resp[0]
 }
 
+dictionaryBtn.addEventListener('click', add_dictionary_info)
 
-// Initialize and load the PDF
-function showPDF(pdf_url) {
-   // Show the pdf loader
-   $("#pdf-loader").show();
+async function add_dictionary_info () {
+    const data = await dictionary_api(dictionaryInput.value)
+    console.log(data);
 
-   PDFJS.getDocument({
-      url: pdf_url
-   }).then(function (pdf_doc) {
-      __PDF_DOC = pdf_doc;
-      __TOTAL_PAGES = __PDF_DOC.numPages;
+    let partOfSpeech_arr = []
+    for(let i = 0; i <= data.meanings.length - 1; i++) {
+        partOfSpeech_arr.push(data.meanings[i].partOfSpeech)
+    }
 
-      // Hide the pdf loader and show pdf container in HTML
-      $("#pdf-loader").hide();
-      $("#pdf-contents").show();
-      $("#pdf-total-pages").text(__TOTAL_PAGES);
-
-      // Show the first page
-      showPage(1);
-   }).catch(function (error) {
-      // If error re-show the upload button
-      $("#pdf-loader").hide();
-      $("#upload-button").show();
-
-      alert(error.message);
-   });;
+    dictionaryCard.innerHTML = `
+        <div class="single">
+            <span>Word:</span>
+            <span>${data.word}</span>
+        </div>
+        <div class="single">
+            <span>Audio:</span>
+            <span>
+                <audio controls src="${data.phonetics[0].audio}"></audio>
+            </span>
+        </div>
+        <div class="single">
+            <span>Definition:</span>
+            <span>${data.meanings[0].definitions[0].definition}</span>
+        </div>
+        <div class="single">
+            <span>Example:</span>
+            <span>${data.meanings[1].definitions[0].example}</span>
+        </div>
+        <div class="single">
+            <span>Parts Of Speech:</span>
+            <span>${partOfSpeech_arr.map(e => e).join(', ')}</span>
+        </div>
+    `
 }
-
-
-// Load and render a specific page of the PDF
-function showPage(page_no) {
-   __PAGE_RENDERING_IN_PROGRESS = 1;
-   __CURRENT_PAGE = page_no;
-
-   // Disable Prev & Next buttons while page is being loaded
-   $("#pdf-next, #pdf-prev").attr('disabled', 'disabled');
-
-   // While page is being rendered hide the canvas and show a loading message
-   $("#pdf-canvas").hide();
-   $("#page-loader").show();
-
-   // Update current page in HTML
-   $("#pdf-current-page").text(page_no);
-
-   // Fetch the page
-   __PDF_DOC.getPage(page_no).then(function (page) {
-      // As the canvas is of a fixed width we need to set the scale of the viewport accordingly
-      var scale_required = __CANVAS.width / page.getViewport(1).width;
-
-      // Get viewport of the page at required scale
-      var viewport = page.getViewport(scale_required);
-
-      // Set canvas height
-      __CANVAS.height = viewport.height;
-
-      var renderContext = {
-         canvasContext: __CANVAS_CTX,
-         viewport: viewport
-      };
-
-      // Render the page contents in the canvas
-      page.render(renderContext).then(function () {
-         __PAGE_RENDERING_IN_PROGRESS = 0;
-
-         // Re-enable Prev & Next buttons
-         $("#pdf-next, #pdf-prev").removeAttr('disabled');
-
-         // Show the canvas and hide the page loader
-         $("#pdf-canvas").show();
-         $("#page-loader").hide();
-      });
-   });
-}
-
-// Upon click this should should trigger click on the <input type="file" /> element
-// This is better than showing the ugly looking file input element
-$("#upload-button").on('click', function () {
-   $("#file-to-upload").trigger('click');
-});
-
-// When user chooses a PDF file
-$("#file-to-upload").on('change', function () {
-   $("#upload-button").hide();
-
-   // Send the object url of the pdf
-   showPDF(URL.createObjectURL($("#file-to-upload").get(0).files[0]));
-});
-
-// Previous page of the PDF
-$("#pdf-prev").on('click', function () {
-   if (__CURRENT_PAGE != 1)
-      showPage(--__CURRENT_PAGE);
-});
-
-// Next page of the PDF
-$("#pdf-next").on('click', function () {
-   if (__CURRENT_PAGE != __TOTAL_PAGES)
-      showPage(++__CURRENT_PAGE);
-});
 
 
 //FOR STOPWATCH////////

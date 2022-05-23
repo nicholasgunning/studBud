@@ -1,0 +1,96 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  * {
+     box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #9a7e7e;
+  
+    
+  }
+  
+  .dictionaryViewer { 
+    grid-area: 1 / 1 / 5 / 3; 
+    background-color: #f18973;
+
+
+           }
+
+
+  .bg {
+    display: grid;
+    place-items: center;
+    background-color: #ffffff;
+    margin-left: 30px;
+    width: 60%;
+    border-radius: 1rem
+  }
+  
+  
+  .dictionaryCard {
+      background-color: #ffffff;
+      width: 70%;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-radius: 1rem;
+     
+  }
+  .single {
+   
+      display: flex;
+      align-items: flex-start;
+      margin: 1rem 0;
+      column-gap: 1rem;
+  }
+  .single span:first-of-type {
+      color: #000000;
+      font-weight: bold;
+  }
+  .single span:last-of-type { color: #000000; }
+  .single:nth-child(3) { align-items: center; }
+  .single:nth-child(3) span:last-of-type audio { max-width: 130%; }
+  
+  
+  
+  
+  .search-form {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 25px;
+      width: clamp(280px, 95vw, 400px);
+      background-color: #ffffff;
+      border-radius: 1rem;
+      border: 1px solid black;
+  
+      
+  }
+  .search-form input,
+  .search-form button {
+    
+      flex-basis: 70%;
+      font-size: 1rem;
+      padding: .6rem 1rem;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: #000000;
+  }
+  .search-form button {
+      flex-basis: 30%;
+      cursor: pointer;
+      border-right: 1px solid #000000;
+      
+  }
+  
+  #dictionarySearchButton {
+
+  
+  }
+  /* .search-form button:active { transform: scale(.9); } */
