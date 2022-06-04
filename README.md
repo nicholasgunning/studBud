@@ -32,7 +32,7 @@ Harry (2019). Using a Dictionary API Exercise 5 | JavaScript Tutorial In Hindi #
 
 Mdn (2018). Introduction to web APIs. [online] MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction [Accessed 8 May 2022].
 
-StopWatch
+#### StopWatch
 
 Developer, F. (2021). Create a Simple Stopwatch using JavaScript (Tutorial + Code). [online] Foolish Developer. Available at: https://www.foolishdeveloper.com/2021/10/simple-stopwatch-using-javascript.html [Accessed 8 May. 2022].
 
