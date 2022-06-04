@@ -3,6 +3,8 @@ const dictionaryInput = document.querySelector('.dictionarySearchInput')
 const dictionaryBtn = document.querySelector('#dictionarySearchButton')
 const dictionaryCard = document.querySelector('.dictionaryCard')
 
+
+//Fetching API
 dictionary_api('love')
 async function dictionary_api (word) {
     const resp = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
@@ -12,7 +14,7 @@ async function dictionary_api (word) {
 }
 
 
-
+//in addition to pressing the search button users can press the enter key
 let keypress = document.querySelector ("#dictionarySearchInput");
 keypress.addEventListener("keydown", function (event) {
 if (event.keyCode === 13) {
@@ -21,18 +23,23 @@ add_dictionary_info(event);
 }
 });
 
-
+// By pressing the search button it runs the search result's
 dictionaryBtn.addEventListener('click', add_dictionary_info)
 
+//Function for filling in various information
 async function add_dictionary_info () {
+   //needs to retrive the value from the API
     const data = await dictionary_api(dictionaryInput.value)
+    //log the data/definition
     console.log(data);
-
+//Only one meaning
     let partOfSpeech_arr = []
     for(let i = 0; i <= data.meanings.length - 1; i++) {
         partOfSpeech_arr.push(data.meanings[i].partOfSpeech)
     }
 
+    //InnerHTML is used to display the result and edit the spans used to show the definition 
+    //Variables throughout the innerHTML refer to the API
     dictionaryCard.innerHTML = `
         <div class="single">
             <span>Word:</span>
@@ -284,6 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Hiding the button using JQUERY
+// Button disapears once it is clicked
 $(document).ready(function () {
    $(".main-button").click(function () {
       $(".main-button").hide()
@@ -292,36 +300,38 @@ $(document).ready(function () {
 });
 
 
-
+//Notes is saved with local storage
 document.addEventListener('DOMContentLoaded', function() {
 	var allNotes = document.getElementsByClassName("allNotes");
 	
 	var i;
 	for (i = 0; i < allNotes.length; i++) {
-  var notes = localStorage.getItem("notesApp" + allNotes[i].id); // FETCHING VALUE FROM LOCAL STORAGE
+  var notes = localStorage.getItem("notesApp" + allNotes[i].id); //Fetching value from local storage
 		
   if(notes != null) {
     document.getElementById(allNotes[i].id).value = notes;
   	}
 	
 allNotes[i].onkeyup = function(event) {
-  var storedData = event.target.value;  localStorage.setItem("notesApp" + event.target.id, storedData); //  STORING VALUE TO LOCAL STORAGE
+  var storedData = event.target.value;  localStorage.setItem("notesApp" + event.target.id, storedData); // Storing value to local storage
  	 }
 	}
 });
 
 
+// Todo function
 (function() {
    var taskCardInput = document.querySelector("#taskCardInput"),
        taskCard = document.querySelector(".taskCard"),
        list = document.querySelector("#list");
    
+      // once submit button is pressed new list is created
    taskCard.addEventListener("submit", function(ev) {
      list.innerHTML += "<li>" + taskCardInput.value + "</li>";
      ev.preventDefault();
    }, false);
  
-   
+   // First click modifies the text while the second click removes it.
    list.addEventListener("click", function(ev) {
      var t = ev.target,
      classList = t.classList;

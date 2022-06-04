@@ -12,11 +12,12 @@
   </head>
   <body>
     <div class="parent">
+      <!-- Dictionary -->
       <div class="dictionaryViewer">
-        <h1>DICTIONARY</h1>
         <div class="bg">
           <div class="search-form">
             <button id="dictionarySearchButton">
+              <!-- https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg REFERENCE -->
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg"
                 alt="Wikipedia icons"
@@ -63,8 +64,9 @@
           </div>
         </div>
       </div>
+      <!-- Spotify player -->
       <div class="player">
-        <h3>player</h3>
+        <h3>Music Player</h3>
         <iframe
           style="border-radius: 12px"
           src="https://open.spotify.com/embed/playlist/3OdOefbXRORCVqe5JLd4ac?utm_source=generator&theme=0"
@@ -75,13 +77,13 @@
         ></iframe>
       </div>
       <div class="notes">
-        <h3>notes</h3>
+        <h3>Notes</h3>
         <div class="notes">
           <textarea id="noteBox" class="allNotes"></textarea>
         </div>
       </div>
       <div class="stopwatch">
-        <h3>timer</h3>
+        <h3>Stopwatch</h3>
         <div id="watchArea" class="watch">
           <div class="time">00:00:00</div>
           <div class="controls">
@@ -92,7 +94,8 @@
         </div>
       </div>
       <div class="pomodoroDiv">
-        <h3>pomodoro</h3>
+        <!-- pomodoro -->
+        <h3>Pomodoro Timer</h3>
         <div class="pomodoro" id="pomodoro1">
           <div class="timer">
             <div class="button-group mode-buttons" id="js-mode-buttons">
@@ -134,6 +137,8 @@
       </div>
 
       <div class="tasks">
+        <h3>To do</h3>
+        <!-- Todo/task box -->
         <div id="taskBox">
           <form class="taskCard">
             <label
@@ -146,7 +151,6 @@
         </div>
       </div>
       <div class="buttons">
-        <h3>buttons</h3>
         <a class="anchorButton" href="tasks.html">
           <button id="viewAllTasksButton">View All Tasks</button>
         </a>
@@ -155,7 +159,9 @@
         </a>
       </div>
     </div>
+    <!-- Bottom nav bar -->
     <div class="footer">
+      <a class="anchorButton" href="tasks.html">
       <div class="firstNavItem">
         <img
           src="Assets/Tasks.png"
@@ -163,8 +169,10 @@
           class="navIcon"
         />
         <p class="navText">Tasks</p>
-      </div>
+      </a>
+  
 
+      <a class="anchorButton" href="index.html">
       <div class="secondNavItem">
         <img
           src="Assets/NewSession.png"
@@ -176,16 +184,20 @@
           Session
         </p>
       </div>
+    </a>
 
+    <a class="anchorButton" href="session.html">
       <div class="thirdNavItem">
         <img
           src="Assets/Dictionary.png"
           alt="Simply Easy Learning"
           class="navIcon"
         />
-        <p class="navText">Dictionary</p>
+        <p class="navText">Reader</p>
       </div>
+    </a>
     </div>
+    <!-- Jquery script tag -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="dictionary.js"></script>
   </body>

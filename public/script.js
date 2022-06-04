@@ -1,14 +1,16 @@
 (function() {
+   // To do box allows for simple tasks to be appended into the div
    var taskCardInput = document.querySelector("#taskCardInput"),
        taskCard = document.querySelector(".taskCard"),
        list = document.querySelector("#list");
    
+   // when submit button is pressed new list is created
    taskCard.addEventListener("submit", function(ev) {
      list.innerHTML += "<li>" + taskCardInput.value + "</li>";
      ev.preventDefault();
    }, false);
  
-   
+   // when task is clicked it changes apperance and if it is clicked again it gets removed
    list.addEventListener("click", function(ev) {
      var t = ev.target,
      classList = t.classList;
@@ -24,7 +26,7 @@
  })();
 
 
-
+//Variables for the PDF viewer
 var __PDF_DOC;
 var __CURRENT_PAGE;
 var __TOTAL_PAGES;
@@ -35,7 +37,7 @@ var __CANVAS_CTX = __CANVAS.getContext('2d');
 
 
 // RESIZING CANVAS
-
+// Resize the canvas/pdfViewer as the window size changes
 var aWrapper = document.getElementById("aWrapper");
 var canvas = document.getElementById("pdf-canvas");
 
@@ -184,7 +186,7 @@ let seconds = 0;
 let intervalStopwatch = null;
 
 
-//event listners
+//event listeners
 start_btn.addEventListener('click', start);
 stop_btn.addEventListener('click', stop);
 reset_btn.addEventListener('click', reset);
@@ -195,7 +197,7 @@ reset_btn.addEventListener('click', reset);
 //update the time
 
 function timer() {
-   //everytime its callex it increases by one
+   //overtime its called it increases by one
    seconds++;
    //format stopwatch time
    //math.floor flattens the number 
@@ -205,7 +207,7 @@ function timer() {
    //seconds/60 = mins
    //allows for 60sec intervals
    let secs = seconds % 60;
-   // in order for the numbers to have a 0 infront of them like a proper stopwatch
+   // in order for the numbers to have a 0 in front of them like a proper stopwatch
    if (secs < 10) secs = '0' + secs;
    if (mins < 10) mins = '0' + mins;
    if (hrs < 10) hrs = '0' + hrs;
@@ -215,10 +217,8 @@ function timer() {
 
 // start function
 
-
 function start() {
    // if its already running we dont need to start again
-
    // if its not running it can start
    // every 1000 ms it will call timer function
    intervalStopwatch = setInterval(timer, 1000)
@@ -226,6 +226,7 @@ function start() {
 }
 
 function stop() {
+   //stop function by clearing interval
    clearInterval(intervalStopwatch);
    intervalStopwatch = null;
 
@@ -236,6 +237,12 @@ function reset() {
    seconds = 0;
    time_el.innerText = '00:00:00';
 }
+
+
+
+
+
+//POMODORO
 
 
 // declaring time for different categories
@@ -252,7 +259,7 @@ const pomMode = {
 let interval;
 
 
-// Getting js button by ID and adding event listner for click so that when the click happens the start timer will actually be called.
+// Getting js button by ID and adding event listener for click so that when the click happens the start timer will actually be called.
 
 const mainButton = document.getElementById('js-btn');
 mainButton.addEventListener('click', () => {
@@ -267,7 +274,6 @@ mainButton.addEventListener('click', () => {
 });
 
 //listener for when any of the buttons are clicked 
-
 const modeButtons = document.querySelector('#js-mode-buttons');
 modeButtons.addEventListener('click', handleMode);
 
@@ -391,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Hiding the button using JQUERY
+//once the button is pressed it disapears 
 $(document).ready(function () {
    $(".main-button").click(function () {
       $(".main-button").hide()

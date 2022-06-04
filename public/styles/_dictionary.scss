@@ -7,6 +7,7 @@
   
   .dictionaryViewer { 
     grid-area: 1 / 1 / 5 / 3; 
+    margin-top: 30px;
 }
 
 
@@ -29,15 +30,6 @@
       border-radius: 1rem; 
   }
 
-  .dictionaryCard{
-
-span {
-
-font-size: 1vw;
-width: 80px;
-}
-
-  }
   .single {
    
       display: flex;
@@ -49,6 +41,7 @@ width: 80px;
       color: #000000;
       font-weight: bold;
   }
+  
   .single span:last-of-type { color: #000000; }
   .single:nth-child(3) { align-items: center; }
   .single:nth-child(3) span:last-of-type audio { 

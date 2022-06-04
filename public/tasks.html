@@ -11,6 +11,7 @@
   </head>
   <body>
     <div class="taskParent">
+      <!-- editable headers allow for Kanban customization -->
       <h1 class="kanbanTitle" contenteditable="true">Kanban Title</h1>
 
       <div id="board">
@@ -54,6 +55,7 @@
 
             <br />
 
+            <!-- submit -->
             <button class="buttonSubmit" type="submit">Submit</button>
           </form>
           <div class="card" id="tasklist" draggable="true"></div>
@@ -71,7 +73,7 @@
           <ul class="card-list"></ul>
         </div>
       </div>
-
+<!-- Anchor buttons link to other pages within the code -->
       <a class="anchorButton" href="session.html">
         <button id="dictionaryButton">Reader</button>
       </a>
@@ -79,7 +81,46 @@
         <button id="dictionaryButton">Dictionary</button>
       </a>
     </div>
-    <!-- partial -->
+
+    <div class="footer">
+      <a class="anchorButton" href="tasks.html">
+      <div class="firstNavItem">
+        <img
+          src="Assets/Tasks.png"
+          alt="Simply Easy Learning"
+          class="navIcon"
+        />
+        <p class="navText">Tasks</p>
+      </a>
+  
+
+      <a class="anchorButton" href="index.html">
+      <div class="secondNavItem">
+        <img
+          src="Assets/NewSession.png"
+          alt="Simply Easy Learning"
+          class="navIcon"
+        />
+        <p class="navTextNoPadding">
+          New <br />
+          Session
+        </p>
+      </div>
+    </a>
+
+    <a class="anchorButton" href="dictionary.html">
+      <div class="thirdNavItem">
+        <img
+          src="Assets/Dictionary.png"
+          alt="Simply Easy Learning"
+          class="navIcon"
+        />
+        <p class="navText">Dictionary</p>
+      </div>
+    </a>
+    </div>
+  
+    <!-- Script tag -->
     <script src="./tasks.js"></script>
   </body>
 </html>

@@ -76,10 +76,13 @@ function renderTask(task) {
 }
 
 
+//CODE FOR KANBAN
 
 
 var movingCard = null;
 
+
+//once the item is picked up from the task div the content needs to be removed from the original div
 function startDragging(e) {
     this.classList.add('dragging');
     movingCard = this;
@@ -87,11 +90,13 @@ function startDragging(e) {
     e.dataTransfer.setData('text/html', this.innerHTML);
 }
 
+//Once the item is dragged into the div it wants to be
 function dragInto(e) {
     if (movingCard.parentNode.parentNode !== this){
         this.classList.add('over');
     }
 }
+
 
 function dragWithin(e) {
     if (e.preventDefault) {
@@ -101,10 +106,13 @@ function dragWithin(e) {
     return false;
 }
 
+//Removing the item from the Div once it has been picked up
 function dragOut(e) {
     this.classList.remove('over');
 }
 
+
+//Once the function is dropped onto the div
 function drop(e) {
     if (e.stopPropagation) {
         e.stopPropagation();
@@ -129,7 +137,10 @@ var cards = document.querySelectorAll('#board .card');
 [].forEach.call(cards, function(card) {
     card.addEventListener('dragstart', startDragging, false);
     card.addEventListener('dragend', stopDragging, false);
+
 });
+
+//declaring all the drag variables 
 var columns = document.querySelectorAll('#board .column');
 [].forEach.call(columns, function(column) {
     column.addEventListener('dragenter', dragInto, false);

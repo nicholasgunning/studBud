@@ -1,3 +1,4 @@
+//Various different style sheets
 @import "./pdfViewer";
 @import "./timer";
 @import "./pomodoro";
@@ -5,6 +6,11 @@
 @import "./dictionary";
 @import "./tasks";
 
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Inter:wght@700&family=Source+Sans+Pro&display=swap');
+
+
+// Default CSS load
 html,
 body {
   height: 100%;
@@ -13,6 +19,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  //Gradient background
   background: rgb(30, 30, 41);
   background: linear-gradient(
     109deg,
@@ -21,6 +28,19 @@ body {
   );
 }
 
+h3 {
+font-family: 'Inter', sans-serif;
+color: white;
+}
+
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+
+// Hide mobile bar when screen is big enough
 .footer {
   display:none;
 }
@@ -31,6 +51,8 @@ body {
   grid-template-rows: repeat(1, 1fr);
 }
 
+
+//Main div grid setup
 .pdfViewer {
   grid-area: 1 / 1 / 5 / 3;
 }
@@ -38,6 +60,7 @@ body {
 .player {
   grid-area: 5 / 1 / 6 / 3;
 }
+
 
 #spotifyPlayer {
   width: 43vw;
@@ -49,6 +72,7 @@ body {
 }
 
 #noteBox {
+  //allow for work on multiple browsers
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -66,6 +90,7 @@ body {
 .stopwatch {
   grid-area: 3 / 3 / 4 / 4;
 }
+
 
 .pomodoroDiv {
   grid-area: 3 / 4 / 4 / 5;
@@ -92,6 +117,7 @@ body {
 
 .addTaskButton {
   all: unset;
+  //default button styling
   text-decoration: none;
   width: 20%;
   padding: 4px;
@@ -124,7 +150,7 @@ a {
 
 .buttons {
   grid-area: 5 / 3 / 6 / 5;
-
+  margin-top: 30px;
   display: block;
 }
 
@@ -143,6 +169,19 @@ a {
 .anchorButton {
   text-decoration: none;
 }
+
+
+.dictionaryCard{
+
+  span {
+  
+  font-size: 1vw;
+  width: 10vw;
+  font-family: 'Hind Madurai', sans-serif;
+  }
+  
+    }
+
 #dictionaryButton {
   all: unset;
   text-decoration: none;
@@ -158,6 +197,8 @@ a {
   margin-bottom: 30px;
 }
 
+// change in css grid and various sizing when the screen is a mobile size 
+//some tablet modifications have been made
 @media only screen and (max-width: 1100px) {
   .controls button {
     padding: 0.2vw 0.8vw;
@@ -172,7 +213,11 @@ a {
   }
 }
 
+// most of the changes however have been applied for the mobile such as stacking all the div's vertically
 @media only screen and (max-width: 650px) {
+
+
+
   .pomodoro {
     width: 50%;
     height: 70%;
@@ -211,9 +256,16 @@ a {
   .dictionaryCard {
     span {
       font-size: 18px;
-      width: 100%;
+      width: 20vw;
     }
   }
+
+  .single span:last-of-type { color: #000000; }
+  .single:nth-child(3) { align-items: center; }
+  .single:nth-child(3) span:last-of-type audio { 
+display:none;
+}
+  
 
   .player {
     grid-area: 21 / 1 / 22 / 5;
@@ -256,6 +308,12 @@ a {
     display: none;
   }
 
+  #dictionaryButton {
+    display: none;
+
+
+  }
+
   p {
     color: white;
   }
@@ -273,7 +331,7 @@ a {
     border-top-color: #ffffff;
     text-align: center;
     padding-top: 15px;
-    padding-bottom: 1px;
+    padding-bottom: 15vw;
   }
 
   .firstNavItem {
