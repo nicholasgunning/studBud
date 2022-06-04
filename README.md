@@ -14,7 +14,7 @@ Snuffleupagus (2021). PDF.js. [online] GitHub. Available at: https://github.com/
 
 #### Kanban
 
-Karthik (2021). Creating a Kanban Board with HTML, CSS & JavaScript. [online] Karthik Dev Articles. Available at: https://karthikdevarticles.com/creating-a-kanban-board-with-html-css-and-javascript [Accessed 4 Jun. 2022].
+Karthik (2021). Creating a Kanban Board with HTML, CSS & JavaScript. [online] Karthik Dev Articles. Available at: https://karthikdevarticles.com/creating-a-kanban-board-with-html-css-and-javascript [Accessed 20 May. 2022].
 
 Rob Dongas (2022). InteractiveTaskList-Improved. [online] replit. Available at: https://replit.com/@robdongas/InteractiveTaskList-Improved?v=1 [Accessed 14 May 2022].
 
@@ -22,7 +22,7 @@ karthikdevarticles (2021). kanban board with html, css and js. [online] Codepen.
 
 Salomon, M. (2019). Todo App + Drag&Drop in Vanilla JS. [online] www.youtube.com. Available at: https://www.youtube.com/watch?v=pz7bO9_lsGo&ab_channel=MaximeSalomon [Accessed 29 Mar. 2022].
 
-dcode (2021). How to Build a Kanban Board with JavaScript (No Frameworks). [online] www.youtube.com. Available at: https://www.youtube.com/watch?v=ijQ6dCughW8&ab_channel=dcode [Accessed 4 May. 2022].
+dcode (2021). How to Build a Kanban Board with JavaScript (No Frameworks). [online] www.youtube.com. Available at: https://www.youtube.com/watch?v=ijQ6dCughW8&ab_channel=dcode [Accessed 29 May. 2022].
 
 #### Dictionary
 
