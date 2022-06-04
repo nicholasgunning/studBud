@@ -3,6 +3,7 @@ const dictionaryInput = document.querySelector('.dictionarySearchInput')
 const dictionaryBtn = document.querySelector('#dictionarySearchButton')
 const dictionaryCard = document.querySelector('.dictionaryCard')
 
+//The Dictionary code has some small parts of code taken from Harry 2019, Further information can be found within the references page
 
 //Fetching API
 dictionary_api('love')
@@ -68,7 +69,7 @@ async function add_dictionary_info() {
 
 
 //FOR STOPWATCH////////
-
+//The stopwatch code has some parts of it that is from Developer, F. (2021). Further information can be found within the References page in the readme.
 
 // global variables for stopwatch
 

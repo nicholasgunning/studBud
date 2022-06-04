@@ -4,6 +4,10 @@
 
 ### References
 
+#### Icons/Images
+
+All icons not referenced within the code were made by myself.
+
 #### PDF viewer
 
 Esmaeel (2021). javascript - How to import pdf.js using cdn. [online] Stack Overflow. Available at: https://stackoverflow.com/questions/66974404/how-to-import-pdf-js-using-cdn [Accessed 1 Apr. 2022].
