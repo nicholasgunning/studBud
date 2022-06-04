@@ -1,0 +1,134 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2A2A2A;
+    padding: 20px; 
+    font-size: 2.8vw;
+    width: 50vw;
+    height: 25vw;
+    border: 1px solid white;
+    border-radius: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  .modal.visible {
+    display: block;
+  }
+  
+  .modal__header {
+    color: white;
+    text-align: center;
+    position: relative;
+    height: 6vw;
+    box-sizing: border-box;
+  }
+  
+  .modalButton {
+    background-color: #2B2B2B;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    padding: 2vw 4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vw;
+    filter: drop-shadow(14px 14px 10px rgba(0, 0, 0, 0.6));
+    margin: 6vw 1vw;
+    cursor: pointer;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background: rgb(30,30,41);
+  background: linear-gradient(109deg, rgba(30,30,41,1) 60%, rgba(35,26,63,1) 100%);
+  }
+  
+  #bannerImage {
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+  }
+  
+  
+  #headerText {
+  position: absolute;
+  top: 5vw;
+  left: 6vw;
+  font-size:5vw;
+  }
+  
+  #headingDescription {
+  position: absolute;
+  top: 15vw;
+  left: 6vw;
+  font-size:3vw;
+  }
+  
+  .banner { 
+  grid-area: 1 / 1 / 4 / 6; 
+  position: relative;
+  }
+  
+  .homepageButton {
+  outline: inherit;
+  color: inherit;
+  border: none;
+  display: block;
+  margin: 3vw;
+  font-size:2vw;
+  }
+  
+  #homepageButton1 {
+  
+  position: absolute;
+  top: 35vw;
+  left: 6vw;
+  }
+  
+  #homepageButton2 {
+  position: absolute;
+  top: 40vw;
+  left: 6vw;
+  }
+  
+  
+  
+  .aboutUs { grid-area: 4 / 1 / 8 / 6; 
+  color: white;
+  margin-top:0px; 
+  margin-right:200px;
+  margin-bottom:0px;
+  margin-left:20px;
+  
+            
+  }
+  
+  #aboutUs {
+  padding-left: 3vw;
+  }
+  
+  
+  #aboutUsTextRectangle {
+  background: #2B2E3C;    
+  margin: 10px;  
+  padding:5vw 5vw 20vw;
+  border-radius: 25px;
+  color: white;
+  font-size:30px;
+  }
+  

@@ -11,6 +11,17 @@ async function dictionary_api (word) {
     return resp[0]
 }
 
+
+
+let keypress = document.querySelector ("#dictionarySearchInput");
+keypress.addEventListener("keydown", function (event) {
+if (event.keyCode === 13) {
+// event.preventDefault();
+add_dictionary_info(event);
+}
+});
+
+
 dictionaryBtn.addEventListener('click', add_dictionary_info)
 
 async function add_dictionary_info () {
@@ -300,5 +311,27 @@ allNotes[i].onkeyup = function(event) {
 });
 
 
-
-
+(function() {
+   var taskCardInput = document.querySelector("#taskCardInput"),
+       taskCard = document.querySelector(".taskCard"),
+       list = document.querySelector("#list");
+   
+   taskCard.addEventListener("submit", function(ev) {
+     list.innerHTML += "<li>" + taskCardInput.value + "</li>";
+     ev.preventDefault();
+   }, false);
+ 
+   
+   list.addEventListener("click", function(ev) {
+     var t = ev.target,
+     classList = t.classList;
+     if (classList.contains("checked")) {
+       t.parentNode.removeChild(t);
+     } else {
+       {
+               classList.add("checked");
+       } 
+     }
+     ev.preventDefault();
+   }, false);
+ })();

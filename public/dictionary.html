@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
     <title>Dictionary</title>
     <link rel="stylesheet" href="styles/styles.scss" />
   </head>
@@ -22,6 +25,7 @@
             </button>
             <input
               class="dictionarySearchInput"
+              id="dictionarySearchInput"
               type="text"
               placeholder="Type a word..."
             />
@@ -128,16 +132,58 @@
           </div>
         </div>
       </div>
+
       <div class="tasks">
-        <h3>tasks</h3>
-        <textarea id="taskBox"></textarea>
+        <div id="taskBox">
+          <form class="taskCard">
+            <label
+              ><input type="text" name="item" id="taskCardInput" required
+            /></label>
+            <input type="submit" value="Add task" class="addTaskButton" />
+          </form>
+
+          <ul id="list"></ul>
+        </div>
       </div>
       <div class="buttons">
         <h3>buttons</h3>
-        <button id="viewAllTasksButton">View All Tasks</button>
-        <a href="index.html">
+        <a class="anchorButton" href="tasks.html">
+          <button id="viewAllTasksButton">View All Tasks</button>
+        </a>
+        <a class="anchorButton" href="session.html">
           <button id="dictionaryButton">Reader</button>
         </a>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="firstNavItem">
+        <img
+          src="Assets/Tasks.png"
+          alt="Simply Easy Learning"
+          class="navIcon"
+        />
+        <p class="navText">Tasks</p>
+      </div>
+
+      <div class="secondNavItem">
+        <img
+          src="Assets/NewSession.png"
+          alt="Simply Easy Learning"
+          class="navIcon"
+        />
+        <p class="navTextNoPadding">
+          New <br />
+          Session
+        </p>
+      </div>
+
+      <div class="thirdNavItem">
+        <img
+          src="Assets/Dictionary.png"
+          alt="Simply Easy Learning"
+          class="navIcon"
+        />
+        <p class="navText">Dictionary</p>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>

@@ -1,9 +1,37 @@
+(function() {
+   var taskCardInput = document.querySelector("#taskCardInput"),
+       taskCard = document.querySelector(".taskCard"),
+       list = document.querySelector("#list");
+   
+   taskCard.addEventListener("submit", function(ev) {
+     list.innerHTML += "<li>" + taskCardInput.value + "</li>";
+     ev.preventDefault();
+   }, false);
+ 
+   
+   list.addEventListener("click", function(ev) {
+     var t = ev.target,
+     classList = t.classList;
+     if (classList.contains("checked")) {
+       t.parentNode.removeChild(t);
+     } else {
+       {
+               classList.add("checked");
+       } 
+     }
+     ev.preventDefault();
+   }, false);
+ })();
+
+
+
 var __PDF_DOC;
 var __CURRENT_PAGE;
 var __TOTAL_PAGES;
 var __PAGE_RENDERING_IN_PROGRESS = 0;
 var __CANVAS = $('#pdf-canvas').get(0);
 var __CANVAS_CTX = __CANVAS.getContext('2d');
+
 
 
 // RESIZING CANVAS
@@ -388,6 +416,8 @@ allNotes[i].onkeyup = function(event) {
  	 }
 	}
 });
+
+
 
 
 

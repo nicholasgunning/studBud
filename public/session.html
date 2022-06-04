@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudBud</title>
+    <link rel="stylesheet" href="styles/styles.scss" />
+  </head>
+  <body>
+    <body>
+      <div class="parent">
+        <div class="pdfViewer">
+          <div class="container">
+            <!--   This part is the title "PDF PREVIEW" and upload button-->
+            <div class="row my-3 d-flex justify-content-center">
+              <div class="col-lg-10">
+                <h3 class="text-center">PDF Preview</h3>
+              </div>
+            </div>
+            <div class="row my-3 d-flex justify-content-center">
+              <!--     This is the Select PDF Button and that section that its in -->
+              <div class="col-lg-10 text-center">
+                <!--       All stuff for the upload button and how it connects to js -->
+                <input
+                  class="d-none"
+                  type="file"
+                  id="file-to-upload"
+                  accept="application/pdf"
+                />
+              </div>
+            </div>
+            <!--   End of Title and Select PDF-->
+          </div>
+          <div class="row my-3 d-flex justify-content-center">
+            <div class="col-lg-10 text-center">
+              <div id="pdf-main-container">
+                <!-- 				<div id="pdf-loader">
+                           <p>Please submit reading</p>
+                           </div> -->
+                <div id="pdf-contents">
+                  <!--           Dont really need but will keep commented
+                              <div id="pdf-meta"> -->
+                  <!--             
+                              <div id="page-count-container">Page <span id="pdf-current-page"></span> of <span id="pdf-total-pages"></span></div>
+                              </div> -->
+                  <div id="aWrapper">
+                    <canvas id="pdf-canvas" width="500vw"></canvas>
+                  </div>
+                  <!-- 						<div id="page-loader">Loading page ...</div>
+                              </div> -->
+                </div>
+              </div>
+              <div id="pdf-buttons">
+                <!--                   Small section for the Next and Previous buttons -->
+                <button id="upload-button">Upload new</button>
+                <button class="arrowLeft" id="pdf-prev">
+                  <span>&#10141;</span>
+                </button>
+                <button class="arrowRight" id="pdf-next">
+                  <span>&#10141;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="player">
+          <h3>player</h3>
+          <iframe
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/playlist/3OdOefbXRORCVqe5JLd4ac?utm_source=generator&theme=0"
+            id="spotifyPlayer"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <div class="notes">
+          <h3>notes</h3>
+          <div class="notes">
+            <textarea id="noteBox" class="allNotes"></textarea>
+          </div>
+        </div>
+        <div class="stopwatch">
+          <h3>timer</h3>
+          <div id="watchArea" class="watch">
+            <div class="time">00:00:00</div>
+            <div class="controls">
+              <button id="start">Start</button>
+              <button id="stop">Stop</button>
+              <button id="reset">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="pomodoroDiv">
+          <h3>pomodoro</h3>
+          <div class="pomodoro" id="pomodoro1">
+            <div class="timer">
+              <div class="button-group mode-buttons" id="js-mode-buttons">
+                <button
+                  data-mode="pomodoro"
+                  class="button active mode-button"
+                  id="js-pomodoro"
+                >
+                  Pomodoro
+                </button>
+                <button
+                  data-mode="shortBreak"
+                  class="button mode-button"
+                  id="js-short-break"
+                >
+                  Short break
+                </button>
+                <button
+                  data-mode="longBreak"
+                  class="button mode-button"
+                  id="js-long-break"
+                >
+                  Long break
+                </button>
+              </div>
+              <div class="clock" id="js-clock">
+                <span id="js-minutes">25</span>
+                <span class="separator">:</span>
+                <span id="js-seconds">00</span>
+              </div>
+
+              <div id="js-clock">
+                <button class="main-button" data-action="start" id="js-btn">
+                  Begin Session
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tasks">
+          <div id="taskBox">
+            <form class="taskCard">
+              <label
+                ><input type="text" name="item" id="taskCardInput" required
+              /></label>
+              <input type="submit" value="Add task" class="addTaskButton" />
+            </form>
+
+            <ul id="list"></ul>
+          </div>
+        </div>
+        <div class="buttons">
+          <h3>buttons</h3>
+          <a class="anchorButton" href="tasks.html">
+            <button id="viewAllTasksButton">View All Tasks</button>
+          </a>
+          <a class="anchorButton" href="dictionary.html">
+            <button id="dictionaryButton">Dictionary</button>
+          </a>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.0.385/build/pdf.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.0.385/build/pdf.worker.js"></script>
+      <script src="./script.js"></script>
+    </body>
+  </body>
+</html>
