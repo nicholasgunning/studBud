@@ -7,8 +7,7 @@
 @import "./tasks";
 
 //Fonts
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Inter:wght@700&family=Source+Sans+Pro&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Inter:wght@700&family=Source+Sans+Pro&display=swap");
 
 // Default CSS load
 html,
@@ -29,20 +28,17 @@ body {
 }
 
 h3 {
-font-family: 'Inter', sans-serif;
-color: white;
+  font-family: "Inter", sans-serif;
+  color: white;
 }
 
 p {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
-
-
-
 
 // Hide mobile bar when screen is big enough
 .footer {
-  display:none;
+  display: none;
 }
 
 .parent {
@@ -50,7 +46,6 @@ p {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
 }
-
 
 //Main div grid setup
 .pdfViewer {
@@ -60,7 +55,6 @@ p {
 .player {
   grid-area: 5 / 1 / 6 / 3;
 }
-
 
 #spotifyPlayer {
   width: 43vw;
@@ -90,7 +84,6 @@ p {
 .stopwatch {
   grid-area: 3 / 3 / 4 / 4;
 }
-
 
 .pomodoroDiv {
   grid-area: 3 / 4 / 4 / 5;
@@ -170,17 +163,13 @@ a {
   text-decoration: none;
 }
 
-
-.dictionaryCard{
-
+.dictionaryCard {
   span {
-  
-  font-size: 1vw;
-  width: 10vw;
-  font-family: 'Hind Madurai', sans-serif;
+    font-size: 1vw;
+    width: 10vw;
+    font-family: "Hind Madurai", sans-serif;
   }
-  
-    }
+}
 
 #dictionaryButton {
   all: unset;
@@ -197,7 +186,7 @@ a {
   margin-bottom: 30px;
 }
 
-// change in css grid and various sizing when the screen is a mobile size 
+// change in css grid and various sizing when the screen is a mobile size
 //some tablet modifications have been made
 @media only screen and (max-width: 1100px) {
   .controls button {
@@ -215,9 +204,6 @@ a {
 
 // most of the changes however have been applied for the mobile such as stacking all the div's vertically
 @media only screen and (max-width: 650px) {
-
-
-
   .pomodoro {
     width: 50%;
     height: 70%;
@@ -260,12 +246,15 @@ a {
     }
   }
 
-  .single span:last-of-type { color: #000000; }
-  .single:nth-child(3) { align-items: center; }
-  .single:nth-child(3) span:last-of-type audio { 
-display:none;
-}
-  
+  .single span:last-of-type {
+    color: #000000;
+  }
+  .single:nth-child(3) {
+    align-items: center;
+  }
+  .single:nth-child(3) span:last-of-type audio {
+    display: none;
+  }
 
   .player {
     grid-area: 21 / 1 / 22 / 5;
@@ -310,8 +299,6 @@ display:none;
 
   #dictionaryButton {
     display: none;
-
-
   }
 
   p {
@@ -369,5 +356,4 @@ display:none;
     height: 80;
     margin-bottom: 180px;
   }
-
 }

@@ -4,10 +4,9 @@
   width: 80%;
   height: 80%;
   margin-left: 5vw;
-
 }
 
-#upload-button { 
+#upload-button {
   background-color: #2b2e3c;
   border-color: white;
   color: white;
@@ -17,31 +16,26 @@
   display: inline-block;
   font-size: 2.5vw;
   border-radius: 20px;
-
 }
 
 #file-to-upload {
-display: none;
+  display: none;
 }
 
-
 .arrowLeft {
-background-color: #2b2e3c;
-color: white;
-transform: rotate(180deg);
-font-size:2.5vw;
-border-radius: 20px;
-border-color: white;
-
-  
+  background-color: #2b2e3c;
+  color: white;
+  transform: rotate(180deg);
+  font-size: 2.5vw;
+  border-radius: 20px;
+  border-color: white;
 }
 
 .arrowRight {
-background-color: #2b2e3c;
-color: white;
-font-size:2.5vw;
-text-decoration: none;
-border-radius: 20px;
-border-color: white;
-  
+  background-color: #2b2e3c;
+  color: white;
+  font-size: 2.5vw;
+  text-decoration: none;
+  border-radius: 20px;
+  border-color: white;
 }

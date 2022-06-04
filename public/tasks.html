@@ -1,126 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta
-      charset="UTF-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
-    <title>Kanban board</title>
-    <link rel="stylesheet" href="styles/styles.scss" />
-  </head>
-  <body>
-    <div class="taskParent">
-      <!-- editable headers allow for Kanban customization -->
-      <h1 class="kanbanTitle" contenteditable="true">Kanban Title</h1>
-
-      <div id="board">
-        <div class="column1 column">
-          <h3>Tasks</h3>
-          <form id="taskform">
-            <label for="task">Task:</label>
-            <input type="text" name="task" id="taskInput" />
-
-            <br />
-            <!-- Date input -->
-            <label for="taskDate">Due Date: </label>
-            <input
-              type="date"
-              name="dueDate"
-              id="dueDateInput"
-              class="dueDate1"
-            />
-            <br />
-
-            <!-- Time input -->
-            <label for="completionTime">Completion Time: </label>
-            <input type="time" name="completionTime" id="completionTimeInput" />
-
-            <br />
-
-            <label for="estimatedTime"
-              >Estimated completion time (in mins):</label
-            >
-            <input type="number" name="estimatedTime" id="estimatedTimeInput" />
-            <!-- Priority -->
-            <br />
-
-            <label for="priority">Task Priority:</label>
-            <select name="priority" id="priorityInput">
-              <option value="">Select one</option>
-              <option value="Low">Low</option>
-              <option value="Medium">Medium</option>
-              <option value="High">High</option>
-            </select>
-
-            <br />
-
-            <!-- submit -->
-            <button class="buttonSubmit" type="submit">Submit</button>
-          </form>
-          <div class="card" id="tasklist" draggable="true"></div>
-        </div>
-        <div class="column2 column">
-          <h3 contenteditable="true">To do</h3>
-          <ul class="card-list"></ul>
-        </div>
-        <div class="column2 column">
-          <h3 contenteditable="true">Doing</h3>
-          <ul class="card-list"></ul>
-        </div>
-        <div class="column2 column">
-          <h3 contenteditable="true">Done</h3>
-          <ul class="card-list"></ul>
-        </div>
+   <head>
+      <meta
+         charset="UTF-8"
+         name="viewport"
+         content="width=device-width, initial-scale=1, minimum-scale=1"
+         />
+      <title>Kanban board</title>
+      <link rel="stylesheet" href="styles/styles.scss" />
+   </head>
+   <body>
+      <div class="taskParent">
+         <!-- editable headers allow for Kanban customization -->
+         <h1 class="kanbanTitle" contenteditable="true">Kanban Title</h1>
+         <div id="board">
+            <div class="column1 column">
+               <h3>Tasks</h3>
+               <form id="taskform">
+                  <label for="task">Task:</label>
+                  <input type="text" name="task" id="taskInput" />
+                  <br />
+                  <!-- Date input -->
+                  <label for="taskDate">Due Date: </label>
+                  <input
+                     type="date"
+                     name="dueDate"
+                     id="dueDateInput"
+                     class="dueDate1"
+                     />
+                  <br />
+                  <!-- Time input -->
+                  <label for="completionTime">Completion Time: </label>
+                  <input type="time" name="completionTime" id="completionTimeInput" />
+                  <br />
+                  <label for="estimatedTime"
+                     >Estimated completion time (in mins):</label
+                     >
+                  <input type="number" name="estimatedTime" id="estimatedTimeInput" />
+                  <!-- Priority -->
+                  <br />
+                  <label for="priority">Task Priority:</label>
+                  <select name="priority" id="priorityInput">
+                     <option value="">Select one</option>
+                     <option value="Low">Low</option>
+                     <option value="Medium">Medium</option>
+                     <option value="High">High</option>
+                  </select>
+                  <br />
+                  <!-- submit -->
+                  <button class="buttonSubmit" type="submit">Submit</button>
+               </form>
+               <div class="card" id="tasklist" draggable="true"></div>
+            </div>
+            <div class="column2 column">
+               <h3 contenteditable="true">To do</h3>
+               <ul class="card-list"></ul>
+            </div>
+            <div class="column2 column">
+               <h3 contenteditable="true">Doing</h3>
+               <ul class="card-list"></ul>
+            </div>
+            <div class="column2 column">
+               <h3 contenteditable="true">Done</h3>
+               <ul class="card-list"></ul>
+            </div>
+         </div>
+         <!-- Anchor buttons link to other pages within the code -->
+         <a class="anchorButton" href="session.html">
+         <button id="dictionaryButton">Reader</button>
+         </a>
+         <a class="anchorButton" href="dictionary.html">
+         <button id="dictionaryButton">Dictionary</button>
+         </a>
       </div>
-<!-- Anchor buttons link to other pages within the code -->
-      <a class="anchorButton" href="session.html">
-        <button id="dictionaryButton">Reader</button>
-      </a>
-      <a class="anchorButton" href="dictionary.html">
-        <button id="dictionaryButton">Dictionary</button>
-      </a>
-    </div>
-
-    <div class="footer">
+      <div class="footer">
       <a class="anchorButton" href="tasks.html">
-      <div class="firstNavItem">
-        <img
-          src="Assets/Tasks.png"
-          alt="Simply Easy Learning"
-          class="navIcon"
-        />
-        <p class="navText">Tasks</p>
+         <div class="firstNavItem">
+            <img
+               src="Assets/Tasks.png"
+               alt="Simply Easy Learning"
+               class="navIcon"
+               />
+            <p class="navText">Tasks</p>
       </a>
-  
-
       <a class="anchorButton" href="index.html">
       <div class="secondNavItem">
-        <img
-          src="Assets/NewSession.png"
-          alt="Simply Easy Learning"
-          class="navIcon"
-        />
-        <p class="navTextNoPadding">
-          New <br />
-          Session
-        </p>
+      <img
+         src="Assets/NewSession.png"
+         alt="Simply Easy Learning"
+         class="navIcon"
+         />
+      <p class="navTextNoPadding">
+      New <br />
+      Session
+      </p>
       </div>
-    </a>
-
-    <a class="anchorButton" href="dictionary.html">
+      </a>
+      <a class="anchorButton" href="dictionary.html">
       <div class="thirdNavItem">
-        <img
-          src="Assets/Dictionary.png"
-          alt="Simply Easy Learning"
-          class="navIcon"
-        />
-        <p class="navText">Dictionary</p>
+      <img
+         src="Assets/Dictionary.png"
+         alt="Simply Easy Learning"
+         class="navIcon"
+         />
+      <p class="navText">Dictionary</p>
       </div>
-    </a>
-    </div>
-  
-    <!-- Script tag -->
-    <script src="./tasks.js"></script>
-  </body>
+      </a>
+      </div>
+      <!-- Script tag -->
+      <script src="./tasks.js"></script>
+   </body>
 </html>
